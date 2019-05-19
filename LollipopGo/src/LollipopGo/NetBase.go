@@ -21,6 +21,7 @@ func wwwGolangLtd(ws *websocket.Conn) {
 		MapSafe:       M,
 		MapSafeServer: MServer,
 	}
+	// 这里启动协程
 	NetDataConntmp.PullFromClient()
 }
 
@@ -163,7 +164,7 @@ func (this *NetDataConn) SendClientDataFunc(StrMD5 string, ClientType string, Da
 
 // 推送格式
 // 例子参考
-// www.521.mom
+// www.ByteEdu.mom
 func (this *NetDataConn) XC_Data_Send_AllPlayer_State(StrMD5 string, Data interface{}) bool {
 	//发给手机
 	for itr := M.Iterator(); itr.HasNext(); {
